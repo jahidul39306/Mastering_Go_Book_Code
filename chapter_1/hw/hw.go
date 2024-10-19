@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"strconv"
 )
 
 func main() {
@@ -32,4 +33,29 @@ func main() {
 
 	arguments := os.Args
 	fmt.Println(arguments)
+
+	var min, max float64
+	initialized := 0
+
+	for i := 1; i < len(arguments); i++ {
+		n, err := strconv.ParseFloat(arguments[i], 64)
+
+		if err != nil {
+			continue
+		}
+
+		if initialized == 0 {
+			min = n
+			max = n
+			initialized = 1
+			continue
+		}
+		if n > min {
+			max = n
+		} else {
+			min = n
+		}
+	}
+	fmt.Println("Min:", min)
+	fmt.Println("Max:", max)
 }
