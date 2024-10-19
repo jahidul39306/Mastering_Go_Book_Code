@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
 	// fmt.Println("Hello World")
@@ -20,8 +23,13 @@ func main() {
 
 	// user input
 
-	fmt.Printf("Please enter your name: ")
-	var name string
-	fmt.Scanln(&name)
-	fmt.Println("Your name is:", name)
+	// fmt.Printf("Please enter your name: ")
+	// var name string
+	// fmt.Scanln(&name)
+	// fmt.Println("Your name is:", name)
+
+	// command line arguments
+
+	arguments := os.Args
+	fmt.Println(arguments)
 }
