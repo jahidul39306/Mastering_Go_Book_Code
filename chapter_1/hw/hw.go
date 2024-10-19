@@ -30,6 +30,9 @@ func main() {
 	// fmt.Println("Your name is:", name)
 
 	// command line arguments
+	// to execute the below code proparly, use "go run hw.go a d -0.25 125"
+	// here -0.25 wor as min value input and 125 as max value input
+	// a b is to demonstrate that the below code will only convert number to float not the characters though everything in command line is string.
 
 	arguments := os.Args
 	fmt.Println(arguments)
